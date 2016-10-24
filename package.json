@@ -1,0 +1,56 @@
+{
+  "name": "hangout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "npm run pro-sass && webpack && node server/server.js",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helpers.js --recursive ./test",
+    "test-watch": "npm run test -- --watch",
+    "dev": "webpack --progress --colors --watch & nodemon server/server.js",
+    "dev-sass": "node-sass -o client/public client/src/styles/main.scss -w -r",
+    "pro-sass": "node-sass --output-style compressed -o client/public client/src/styles/main.scss"
+  },
+  "author": "Jordan",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.15.2",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "lodash": "^4.16.4",
+    "morgan": "^1.7.0",
+    "node-sass": "^3.10.1",
+    "nodemon": "^1.11.0",
+    "path": "^0.12.7",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "redux": "^3.6.0",
+    "redux-form": "^6.1.0",
+    "redux-logger": "^2.7.0",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.1.0",
+    "socket.io": "^1.5.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "chai": "^3.5.0",
+    "chai-jquery": "^2.0.0",
+    "jquery": "^3.1.1",
+    "jsdom": "^9.6.0",
+    "mocha": "^3.1.2",
+    "react-addons-test-utils": "^15.3.2",
+    "webpack": "^1.13.2"
+  }
+}
