@@ -48704,11 +48704,11 @@
 	var App = function App(props) {
 	  return _react2.default.createElement(
 	    'div',
-	    { className: 'container' },
+	    null,
 	    _react2.default.createElement(_Header2.default, null),
 	    _react2.default.createElement(
 	      'div',
-	      null,
+	      { className: 'appChildren' },
 	      props.children
 	    )
 	  );
@@ -48794,18 +48794,26 @@
 	        'nav',
 	        null,
 	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: '/' },
-	          'Welcome'
-	        ),
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: '/resource' },
-	          'Resource'
-	        ),
-	        _react2.default.createElement(
 	          'ul',
 	          null,
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Welcome'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/resource' },
+	              'Resource'
+	            )
+	          ),
 	          this.renderLinks()
 	        )
 	      );
@@ -48867,7 +48875,7 @@
 	    null,
 	    _react2.default.createElement('input', _extends({}, field.input, { type: field.type })),
 	    field.meta.touched && field.meta.error && _react2.default.createElement(
-	      'span',
+	      'div',
 	      { className: 'error' },
 	      field.meta.error
 	    )
@@ -48899,7 +48907,12 @@
 	
 	      return _react2.default.createElement(
 	        'form',
-	        { onSubmit: handleSubmit(this.handleFormSubmit.bind(this)) },
+	        { className: 'signIn', onSubmit: handleSubmit(this.handleFormSubmit.bind(this)) },
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'Sign In'
+	        ),
 	        _react2.default.createElement(
 	          'fieldset',
 	          null,
@@ -48999,7 +49012,7 @@
 	    null,
 	    _react2.default.createElement('input', _extends({}, field.input, { type: field.type })),
 	    field.meta.touched && field.meta.error && _react2.default.createElement(
-	      'span',
+	      'div',
 	      { className: 'error' },
 	      field.meta.error
 	    )
@@ -49050,7 +49063,12 @@
 	
 	      return _react2.default.createElement(
 	        'form',
-	        { onSubmit: handleSubmit(this.handleFormSubmit.bind(this)) },
+	        { className: 'signUp', onSubmit: handleSubmit(this.handleFormSubmit.bind(this)) },
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'Sign Up'
+	        ),
 	        _react2.default.createElement(
 	          'fieldset',
 	          null,
@@ -49188,7 +49206,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'signOut' },
 	        'Sorry to see you go...'
 	      );
 	    }

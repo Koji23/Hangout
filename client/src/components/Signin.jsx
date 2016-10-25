@@ -10,7 +10,7 @@ const renderInput = field => (
     <input {...field.input}   type={field.type} /> 
     {
       field.meta.touched && field.meta.error && 
-      <span className="error">{field.meta.error}</span>
+      <div className="error">{field.meta.error}</div>
     }
   </div>
 );
@@ -24,7 +24,8 @@ class Signin extends Component {
     const { handleSubmit } = this.props; // v6...no fields prop
 
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+      <form className="signIn" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+        <h1>Sign In</h1>
         <fieldset>
           <label htmlFor="email">Email:</label>
           <Field name="email" component={renderInput} type="text"/>

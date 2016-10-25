@@ -2,9 +2,9 @@ import React from 'react';
 import Header from './Header.jsx';
  
 const App = (props) => (
-  <div className="container">
+  <div>
     <Header />
-    <div>
+    <div className="appChildren">
       { props.children } 
     </div>
   </div>

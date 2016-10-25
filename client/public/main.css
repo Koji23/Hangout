@@ -1,0 +1,111 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+#app {
+  font-family: "Roboto", sans-serif; }
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #FF6347;
+  height: 40px; }
+  nav ul a {
+    color: #FFF;
+    text-decoration: none; }
+    nav ul a:hover {
+      text-decoration: underline; }
+    nav ul a:active {
+      font-weight: bold; }
+
+.appChildren {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em; }
+
+form.signUp,
+form.signIn {
+  border: 1px solid #888;
+  padding: 1em 3em;
+  border-radius: 10px;
+  width: 50%;
+  display: flex;
+  flex-direction: column; }
+  form.signUp fieldset,
+  form.signIn fieldset {
+    margin: 1em auto;
+    width: 60%; }
+  form.signUp h1,
+  form.signIn h1 {
+    margin: auto;
+    font-size: 1.5em;
+    color: #FF6347; }
+  form.signUp label,
+  form.signIn label {
+    color: #888; }
+  form.signUp button,
+  form.signIn button {
+    width: 50%;
+    border-radius: 5px;
+    height: 3em;
+    background-color: #FF6347;
+    color: white;
+    margin: 1em auto;
+    border: none; }
+  form.signUp input,
+  form.signIn input {
+    width: 100%;
+    height: 2em;
+    border-radius: 6px;
+    border: 1px solid #BBB;
+    font-size: 1.1em;
+    color: #555;
+    padding: 0 0.2em; }
+  form.signUp .error,
+  form.signIn .error {
+    color: red;
+    margin-top: 0.5em; }

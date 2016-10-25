@@ -1,0 +1,82 @@
+@import './reset';
+@import './variables';
+@import './mixins';
+
+#app {
+  font-family: $main-font;
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $a-color;
+  height: 40px;
+  a{
+    color: #FFF;
+    text-decoration: none;
+    &:hover { 
+      text-decoration: underline;
+    }
+    &:active {
+      font-weight: bold;
+    }
+  }
+}
+
+.appChildren {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+form.signUp,
+form.signIn {
+  border: 1px solid #888;
+  padding: 1em 3em;
+  border-radius: 10px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  fieldset {
+    margin: 1em auto;
+    width: 60%;
+  }
+  h1 {
+    margin: auto;
+    font-size: 1.5em;
+    color: $a-color;
+  }
+  label { 
+    color: #888;
+  }
+  button {
+    width: 50%;
+    border-radius: 5px;
+    height: 3em;
+    background-color: $a-color;
+    color: white;
+    margin: 1em auto;
+    border: none;
+  }
+  input {
+    width: 100%;
+    height: 2em;
+    border-radius: 6px;
+    border: 1px solid #BBB;
+    font-size: 1.1em;
+    color: #555;
+    padding: 0 0.2em;
+  }
+  .error {
+    color: red;
+    margin-top: 0.5em;
+  }
+}
+
+
+
+
+
+
+

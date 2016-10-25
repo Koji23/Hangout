@@ -6,9 +6,9 @@ import * as authActions from '../actions/auth_actions.js';
 const renderInput = field => (
   <div>
     <input {...field.input}   type={field.type} /> 
-    {
+    { 
       field.meta.touched && field.meta.error && 
-      <span className="error">{field.meta.error}</span>
+      <div className="error">{field.meta.error}</div>
     }
   </div>
 );
@@ -34,7 +34,8 @@ class Signup extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+      <form className="signUp" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+        <h1>Sign Up</h1>
         <fieldset >
           <label>Email:</label>
           <Field name="email" component={renderInput} type="text">Email:</Field>

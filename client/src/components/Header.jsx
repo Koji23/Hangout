@@ -22,9 +22,9 @@ class Header extends Component {
   render() {
     return (
       <nav>
-        <Link to="/" >Welcome</Link>
-        <Link to="/resource" >Resource</Link>
         <ul>
+          <li><Link to="/" >Welcome</Link></li>
+          <li><Link to="/resource" >Resource</Link></li>
           {this.renderLinks()}
         </ul>
       </nav>
