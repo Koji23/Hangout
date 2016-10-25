@@ -5,27 +5,25 @@ import { connect } from 'react-redux';
 class Header extends Component {
   renderLinks() {
     if (this.props.authenticated) {
-      // show a link to sign out
-      return <li className="nav-item">
-        <Link className="nav-link" to="/signout">Sign Out</Link>
-      </li>
+      return (<li><Link to="/signout">Sign Out</Link></li>);
     } else {
-      // show a link to sign in or sign up
-      return [
-        <li className="nav-item" key={1}>
-          <Link className="nav-link" to="/signin">Sign In</Link>
+      // note: returning an array of jsx elements lets you skip the wrapper div :)
+      return ([
+        <li key={1}>
+          <Link to="/signin">Sign In</Link>
         </li>,
-        <li className="nav-item" key={2}>
-          <Link className="nav-link" to="/signup">Sign Up</Link>
+        <li key={2}>
+          <Link to="/signup">Sign Up</Link>
         </li>
-      ];
+      ]); 
     }
   }
 
   render() {
     return (
       <nav>
-        <Link to="/" >Redux Auth</Link>
+        <Link to="/" >Welcome</Link>
+        <Link to="/resource" >Resource</Link>
         <ul>
           {this.renderLinks()}
         </ul>

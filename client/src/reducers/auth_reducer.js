@@ -1,9 +1,20 @@
-import { CHANGE_AUTH } from '../actions/auth_actions.js';
+import {
+  AUTH_USER,
+  UNAUTH_USER,
+  AUTH_ERROR,
+  FETCH_MESSAGE
+} from '../actions/auth_actions.js';
 
-export default function(state = false, action) {
+export default function(state = {}, action) {
   switch (action.type) {
-    case CHANGE_AUTH:
-      return action.payload;
+    case AUTH_USER:
+      return {...state, error: '', authenticated: true };
+    case UNAUTH_USER:
+      return {...state, authenticated: false };
+    case AUTH_ERROR:
+      return {...state, error: action.payload };
+    case FETCH_MESSAGE:
+      return {...state, message: action.payload };
   }
 
   return state;
