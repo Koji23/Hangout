@@ -20,6 +20,7 @@ import Signin from './components/Signin.jsx';
 import Signup from './components/Signup.jsx';
 import Signout from './components/Signout.jsx';
 import Welcome from './components/Welcome.jsx';
+import ProfilePicture from './components/ProfilePicture.jsx';
 import Resource from './components/resources.jsx';
 
 // Action Types
@@ -40,6 +41,7 @@ const Routes = (
     <Route path="signin" component={ Signin } />
     <Route path="signup" component={ Signup } />
     <Route path="signout" component={ Signout } />
+    <Route path="/profilepic" component={ requireAuth(ProfilePicture) } />
     <Route path="/resource" component={ requireAuth(Resource) } />
   </Route>
 );

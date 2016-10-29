@@ -24,6 +24,7 @@ class Header extends Component {
       <nav>
         <ul>
           <li><Link to="/" >Welcome</Link></li>
+          <li><Link to="/profilepic" >Profile Pic</Link></li>
           <li><Link to="/resource" >Resource</Link></li>
           {this.renderLinks()}
         </ul>

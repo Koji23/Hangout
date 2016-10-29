@@ -39,7 +39,7 @@ export function signUpUser(email, password) {
       .then(response => {
         dispatch({ type: AUTH_USER });
         localStorage.setItem('token', response.data.token);
-        browserHistory.push('/resource');
+        browserHistory.push('/profilepic');
       })
       .catch(response => {
         dispatch(authError(response.data.error));
