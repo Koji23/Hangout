@@ -42,7 +42,7 @@ const Routes = (
     <Route path="signup" component={ Signup } />
     <Route path="signout" component={ Signout } />
     <Route path="/profilepic" component={ requireAuth(ProfilePicture) } />
-    <Route path="/resource" component={ requireAuth(Resource) } />
+    <Route path="/resource" component={ Resource } />
   </Route>
 );
 
