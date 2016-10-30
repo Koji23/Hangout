@@ -133,7 +133,14 @@ class Resource extends Component {
     let videoSource = this.cams.value;
     let constraints = { 
       audio: false, 
-      video: true,
+      video: {  
+        mandatory: {
+          minWidth: 240,
+          maxWidth: 240,
+          maxHeight: 240,
+          maxHeight: 240,
+        }
+      },
       optional: [{
         sourceId: videoSource // this should enable camera change, untested
       }]
@@ -163,16 +170,10 @@ class Resource extends Component {
         <br />
         <button onClick={this.sendSignal}>Start Signaling</button>
         <br />
+        <h3>My Video:</h3>
         <video ref={node => { this.myVid = node; }} autoPlay></video>
+        <h3>Peer Video:</h3>
         <video ref={node => { this.theirVid = node; }} autoPlay></video>
-        <br />
-        <button id="takePic" autoFocus="true">Take Profile Pic</button>
-        <div>
-          <label>Your Name</label><input id="myName" type="text"/>
-          <label>Message</label><input id="myMessage" type="text"/>
-          <input id="sendMessage" type="submit"/>
-          <div id="chatArea">Message Output:</div>
-        </div>
       </div>
 
     );

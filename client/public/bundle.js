@@ -49489,6 +49489,8 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -49649,7 +49651,13 @@
 	      var videoSource = this.cams.value;
 	      var constraints = {
 	        audio: false,
-	        video: true,
+	        video: {
+	          mandatory: _defineProperty({
+	            minWidth: 240,
+	            maxWidth: 240,
+	            maxHeight: 240
+	          }, 'maxHeight', 240)
+	        },
 	        optional: [{
 	          sourceId: videoSource // this should enable camera change, untested
 	        }]
@@ -49699,40 +49707,22 @@
 	          'Start Signaling'
 	        ),
 	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          'My Video:'
+	        ),
 	        _react2.default.createElement('video', { ref: function ref(node) {
 	            _this4.myVid = node;
 	          }, autoPlay: true }),
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          'Peer Video:'
+	        ),
 	        _react2.default.createElement('video', { ref: function ref(node) {
 	            _this4.theirVid = node;
-	          }, autoPlay: true }),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement(
-	          'button',
-	          { id: 'takePic', autoFocus: 'true' },
-	          'Take Profile Pic'
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'label',
-	            null,
-	            'Your Name'
-	          ),
-	          _react2.default.createElement('input', { id: 'myName', type: 'text' }),
-	          _react2.default.createElement(
-	            'label',
-	            null,
-	            'Message'
-	          ),
-	          _react2.default.createElement('input', { id: 'myMessage', type: 'text' }),
-	          _react2.default.createElement('input', { id: 'sendMessage', type: 'submit' }),
-	          _react2.default.createElement(
-	            'div',
-	            { id: 'chatArea' },
-	            'Message Output:'
-	          )
-	        )
+	          }, autoPlay: true })
 	      );
 	    }
 	  }]);
