@@ -3,8 +3,8 @@ const app = express();
 const fs = require('fs');
 var https = require('https');
 const options = {
-  key: fs.readFileSync('hangout-key.pem'),
-  cert: fs.readFileSync('hangout-cert.pem')
+  key: fs.readFileSync('server.key'),
+  cert: fs.readFileSync('server.crt')
 }
 const server = https.createServer(options, app);
 const io = require('socket.io')(server);

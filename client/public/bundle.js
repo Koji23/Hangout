@@ -8280,7 +8280,7 @@
 	  _react2.default.createElement(_reactRouter.Route, { path: 'signup', component: _Signup2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'signout', component: _Signout2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: '/profilepic', component: (0, _requireAuth2.default)(_ProfilePicture2.default) }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/resource', component: (0, _requireAuth2.default)(_resources2.default) })
+	  _react2.default.createElement(_reactRouter.Route, { path: '/resource', component: _resources2.default })
 	);
 	
 	_reactDom2.default.render(_react2.default.createElement(
